@@ -1,0 +1,9 @@
+body {
+    font-family: Arial, sans-serif;
+}
+button {
+    transition: background 0.3s ease;
+}
+button:hover {
+    opacity: 0.8;
+}

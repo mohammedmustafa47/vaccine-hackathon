@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2 class="text-2xl font-bold">Welcome, {{ user.name }}</h2>
+
+<h3 class="text-xl font-bold mt-4">Your Medicine Reminders</h3>
+<ul class="mt-2">
+    {% for medicine in medicines %}
+        <li class="bg-white p-2 rounded shadow mt-2">
+            <strong>{{ medicine.name }}</strong> - {{ medicine.time }}
+        </li>
+    {% endfor %}
+</ul>
+
+<h3 class="text-xl font-bold mt-4">Add Medicine Reminder</h3>
+<form action="/set-medicine" method="post" class="mt-2">
+    <input type="hidden" name="user_id" value="{{ user.id }}">
+    <input type="text" name="name" placeholder="Medicine Name" class="w-full p-2 border rounded mb-2" required>
+    <input type="time" name="time" class="w-full p-2 border rounded mb-2" required>
+    <button type="submit" class="bg-green-500 text-white p-2 rounded w-full">Add Reminder</button>
+</form>
+{% endblock %}

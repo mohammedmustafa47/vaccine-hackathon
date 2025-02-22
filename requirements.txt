@@ -1,0 +1,1 @@
+pip install fastapi uvicorn sqlalchemy databases jinja2 passlib python-multipart twilio python-dotenv pymysql bcrypt cryptography
